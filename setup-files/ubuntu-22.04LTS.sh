@@ -1,10 +1,12 @@
+cd ~/
+
 # alias
 
 echo alias l=\"ls -oghpvA\" >> ~/.bashrc
 ## use netrw plugin
 echo alias v=\"vim .\" >> ~/.bashrc
 ## source command in ubuntu
-. ~/.bashrc
+source ~/.bashrc
 
 # vim
 
@@ -20,6 +22,8 @@ echo let g:netrw_altv=1 >> ~/.vimrc
 echo let g:netrw_alto=1 >> ~/.vimrc
 ## set split window size(%)
 echo let g:netrw_winsize=75 >> ~/.vimrc
+## turn off all beep (vim)
+echo set belloff=all >> ~/.vimrc
 
 mkdir -p .vim
 
@@ -34,6 +38,8 @@ echo colorscheme hybrid >> ~/.vimrc
 
 # C++
 sudo apt -y -qq update
+sudo apt -y -qq upgrate
+
 sudo apt -y -qq install g++
 sudo apt -y -qq install gcc
 sudo apt -y -qq install make
@@ -41,7 +47,12 @@ sudo apt -y -qq install libboost-all-dev
 
 # Python
 sudo apt -y -qq install python3-pip
+sudo apt -y -qq install python3-venv
 python3 -m pip install --upgrade pip
-python3 -m pip install numpy
-python3 -m pip install optuna
-python3 -m pip install biopython
+
+# turn off the beep
+if [ ! -e ~/.inputrc ]; then
+  touch ~/.inputrc
+fi
+
+echo "set bell-style none" >> ~/.inputrc
