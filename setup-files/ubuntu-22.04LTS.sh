@@ -1,3 +1,4 @@
+# プロキシ環境の場合git,apt,pipなどで設定する必要があることに注意
 cd ~/
 
 # alias
@@ -38,7 +39,7 @@ echo colorscheme hybrid >> ~/.vimrc
 
 # C++
 sudo apt -y -qq update
-sudo apt -y -qq upgrate
+sudo apt -y -qq upgrade
 
 sudo apt -y -qq install g++
 sudo apt -y -qq install gcc
